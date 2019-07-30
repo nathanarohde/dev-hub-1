@@ -9,17 +9,18 @@ describe('<Location />', () => {
   let wrapper;
 
   beforeEach(() => {
-    wrapper = shallow(<Location/>);
-    wrapper.setProps({ formatted_address: '698 Peoria St, Aurora CO 80011', id: 352802 });
+    wrapper = shallow(<Location formatted_address = {'698 Peoria St, Aurora CO 80011'} location_id = { 9999 }/>);
+    // wrapper = shallow(<Location />);
+    // wrapper.setProps({ formatted_address: '698 Peoria St, Aurora CO 80011', id: '9999' });
   });
 
   // Tests if data displays, unpopulated prop not tested for because the assumption is data WILL be present
 
   it('Should display a formatted_address', () => {
-    expect(wrapper.render().find('698 Peoria St, Aurora CO 80011'));
+    expect(wrapper.text()).toMatch('698 Peoria St, Aurora CO 80011')
   });
 
   it('Should display an id', () => {
-    expect(wrapper.render().find('352802'));
+    expect(wrapper.text()).toMatch('9999');
   });
 })
