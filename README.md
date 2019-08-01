@@ -1,3 +1,19 @@
+Due to CORS the code will not work unless the following extension is installed: https://mybrowseraddon.com/access-control-allow-origin.html?v=0.1.1&type=install
+
+While there are many potential hacky work arounds, routing through a heroku app (not an appropriate enterprise level solution), jsonp (potential security vulnerabilities), or injecting the response with a header that allows access my impression is that resolving this issue while an interesting challenge, was not appropriate for the challenge.
+
+Having the server being communicated allowing access is the common sense way to handle this issue.  Therefore the expedient solution, using a browser extension was used.
+
+Additionally while:
+"jesttest": "jest --verbose" was added to the scripts object in package.json, while it will run all of the tests will fail because of the addition of Enzyme.
+https://airbnb.io/enzyme/
+
+Enzyme is a React specific testing suite that works alongside Jest and offers advantages over using a general Javascript testing suite alone.
+
+For tests to properly run 'npm test' or 'npm run test' 
+
+-- Generic Create React App Read Me Below --
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
